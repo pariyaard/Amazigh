@@ -1,5 +1,4 @@
 package com.example.testfirebase;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +26,9 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<
     @NonNull
     @Override
     public ItemAdapter.ItemViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.woord_layout, parent, false);
+        return new ItemAdapter.ItemViewholder(view);
     }
     public class ItemViewholder extends RecyclerView.ViewHolder {
         public ItemViewholder(@NonNull View itemView) {
@@ -35,5 +36,3 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<
         }
     }
 }
-
-
