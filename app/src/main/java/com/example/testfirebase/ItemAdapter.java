@@ -22,6 +22,9 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<
     }
     @Override
     protected void onBindViewHolder(@NonNull ItemAdapter.ItemViewholder holder, int position, @NonNull Woord model) {
+        holder.tvWoordned.setText(model.getWoordned());
+        holder.tvwoordamz.setText(model.getWoordamz());
+
     }
     @NonNull
     @Override
@@ -31,8 +34,15 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<
         return new ItemAdapter.ItemViewholder(view);
     }
     public class ItemViewholder extends RecyclerView.ViewHolder {
+
+        TextView tvWoordned, tvwoordamz;
+        ImageView ivWoord;
+
         public ItemViewholder(@NonNull View itemView) {
             super(itemView);
+            tvWoordned = itemView.findViewById(R.id.tvWoordned2);
+            tvwoordamz = itemView.findViewById(R.id.tvWoordamz2);
+            ivWoord = itemView.findViewById(R.id.ivWoord2);
         }
     }
 }
