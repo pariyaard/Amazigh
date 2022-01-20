@@ -1,9 +1,12 @@
 package com.example.testfirebase;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import androidx.annotation.NonNull;
@@ -17,14 +20,18 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<
      *
      * @param options
      */
-    public ItemAdapter(@NonNull FirebaseRecyclerOptions<Woord> options) {
+
+    Context x;
+    public ItemAdapter(@NonNull FirebaseRecyclerOptions<Woord> options, Context context) {
         super(options);
+
+        x = context;
     }
     @Override
     protected void onBindViewHolder(@NonNull ItemAdapter.ItemViewholder holder, int position, @NonNull Woord model) {
         holder.tvWoordned.setText(model.getWoordned());
         holder.tvwoordamz.setText(model.getWoordamz());
-
+        Glide.with(x).load(model.getImagepath()).into(holder.ivWoord);
     }
     @NonNull
     @Override
