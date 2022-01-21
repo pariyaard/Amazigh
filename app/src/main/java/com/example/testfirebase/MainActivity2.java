@@ -12,6 +12,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity2 extends AppCompatActivity {
     private RecyclerView recyclerView;
     Context x;
+
     ItemAdapter adapter;
     //WoordAdapter adapter;
     DatabaseReference algemeen, woorden;
