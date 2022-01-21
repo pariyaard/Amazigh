@@ -6,5 +6,5 @@
         android:id="@+id/recycler1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffb6c1" />
+        android:background="#ffb6c8" />
 </androidx.constraintlayout.widget.ConstraintLayout>
